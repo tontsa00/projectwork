@@ -28,7 +28,7 @@ install_vlc:
    - pkgs:
      - vlc
 
-install_adobereader
+install_adobereader:
  pkg.installed:
    - pkgs:
      - adobereader
