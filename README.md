@@ -126,3 +126,78 @@ Kopion Windows 10 minionillani pref.js asetus tiedoston DigitalOcean salt-master
 
 Sekä tein saman myöx Xubuntu minionillani, eli kopioin pref.js asetus tiedoston DigitalOCean palvelimelleni.
 
+Loin kaksi kansiota nimeltään windowsasetukset sekä xubuntuasetukset ja loin kansioihin tiedostot init.sls, joihin kirjoitin:
+
+windowsasetukset init.sls:
+
+C:\Users\tonts\AppData\Roaming\Mozilla\Firefox\Profiles\isc998ku.default-1551160940498\prefs.js:
+  file.managed:
+    - source: salt://projectwork/windowsasetukset/prefs.js
+
+xubuntuasetukset init.sls:
+
+~/.mozilla/firefox/b6w20qxd.default/prefs.js
+  file.managed:
+    - source: salt//projectwork/xubuntuasetukset/prefs.js
+
+Kumpaankin asetustiedostoon muutin kotisivuksi Haaga-Helian App sivun, mistä voi kätevästi löytää kaikki opiskelijan tarvitsevat sivustot.
+
+top.sls tiedostoon lisäsin - windowsasetukset sekä - xubuntuasetukset, eli kummankin minionia varten määritetyt asetus tiedosto kansiot mitkä loin.
+
+Kun olin komennolla sudo salt '*' state.highstate suorittanut tilan ajon, tarkistin Firefox selaimen kotisivun, ja huomasin, ettää uusi kotisivu oli
+muuttunut osoitteeksi hhapp.info mikä oli tarkoituskin.
+
+Ainoastaan xubuntu minionilla ei kotisivun muutosto tapahtunut, koska sain virheilmoituksen:
+
+ ID: ~/.mozilla/firefox/b6w20qxd.default/prefs.js
+    Function: file.managed
+      Result: False
+     Comment: Parent directory not present
+     Started: 19:18:58.867559
+    Duration: 275.096 ms
+     Changes:   
+
+Ja ihan lopuksi loin Samba ohjelmalla uuden jaetun kansion kummankin minionin käyttöön.
+
+Asensin samban palvelimelleni sudo apt-get install samba komennolla
+
+whereis samba komennolla mihin samba oli asentunut, ja asennus kansio löytyikin:
+
+/usr/sbin/samba/ /usr/lib/x86_64-linux-gnu/samba /etc/samba /usr/share/samba /usr/share/man/n8/samba.8.gz
+/user/share/man/man7/samba.7.gz
+
+Loin uuden kansion komennolla sudo mkdir /home/toni/sambashare/
+
+Sekä muutin asetustiedostoa smb.conf komennolla sudoedit /etc/samba/smb.conf
+
+Kirjoitin asetustiedoston loppuun:
+
+[sambashare]
+comment = Samba on Ubuntu
+path = /home/username/sambashare
+read only = no
+browsable = yes
+
+Sekä avasin portit palomuurista samballa komennoilla_
+sudo ufw allow 139/tcp
+sudo ufw allow 445/tcp
+
+Ja käynnistin samba palvelun uudestaan, sudo service smbd restart komennolla.
+
+Loin uuden käyttäjän sudo smbpasswd -a toni komennolla ja määritin uuden keksimäni salasanan
+toni käyttäjälle.
+
+Kaiken tämän jälkeen Windows tietokoneella avasin tiedostojenhallinta ikkunan, kirjoitin osoitepalkkiin:
+
+\\tontsa00.me\sambashare
+
+Jolloin pääsin Windows tietokoneellani samban jaettuun kansioon.
+
+
+Luomani state tila tiedoston mahdollistavat uusien käyttäjien luomisen minion tietokoneille, uusien 
+ohjelmien asennus minioneille sekä asetustiedostojen korvaaminen uusilla muutoksilla. Ja myöskin yhteisen
+jaetun samba kansion käyttöönotto minioneille.
+
+Opin itse uutta miten uudet käyttäjät pitäisi luode minioneille, vaikka en siinä onnistunutkaat.
+
+Pidin kovasti projektin tekemisestä ja tulen hyödyntämään oppimaani tulevaisuudessa.
