@@ -16,7 +16,11 @@ Olen jo etukäteen tehnyt valmistelu projektilleni.
 Määritin käyttöön GitHub repository varaston windows repository varaston käyttöön Saltstack ohjeiden mukaan:
 https://docs.saltstack.com/en/latest/topics/windows/windows-package-manager.html.
 
+Minionit projektissani ovat windows 10 minion, Windows 10 läppärilläni sekä xubuntu minion, xubuntu tietokoneellani.
+
 Projektissani käytin Windows 10 läppäriä, mille loin uudet käyttäjät saltilla, asensin ohjelmat sekä määritin ohjelmien
 asetukset saltilla valmiiksi.
 
 Tämän lisäksi käytin Xubuntua jolle tein samat määritykset kuin Windows 10 läppärilleni.
+
+Määritin myös Samballa yhteisen kansion DigitalOcean palvelimeltani kummankin minionin yhteiseen käyttöön.
