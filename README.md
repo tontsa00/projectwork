@@ -95,3 +95,17 @@ Selvitin mitä nämä virheet tarkoittivat, kuitenkin tuloksetta tai en en tienn
 Jatoin projektia asentamalla ohjelmia saltilla.
 
 
+Asensin seuraavat ohjelmat molemmille minioneille:
+
+Firefox www-selain
+Thunderbird sähköpostiohjelma
+Gimp kuvankäsittelyohjelma
+VLC multimedia soitin ohjelma
+7zip pakkaushallintaohjelma
+Git Github repository ohjelman
+
+Adobe Reader ohjelman asennus ei onnistunut Xubuntu minionille, mutta windows 10 minionille asennus onnistui.
+Asensin sen sijaan Calibre pdf luku ohjelman Xubuntu minionille.
+LibreOffice toimisto ohjelmat asentuivat Xubuntu minionille, mutta ei Windows minionille.
+Asensin LibreOffice ohjelman manuaalisesti lataamalla ohjelman Windows minionillani osoitteesta: https://fi.libreoffice.org/.
+
