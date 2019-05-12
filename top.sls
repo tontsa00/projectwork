@@ -1,9 +1,10 @@
 base:
-  'windows 10 minion':
-     - projectwork
-         - windows
-         - ohjelmat
-  'xubuntu minion':
-     - projectwork
-         - xubuntu
-         - ohjelmat
+  '*windows 10 minion*':
+    - match: glob
+    - windows
+    - windowsasetukset
+
+  '*xubuntu minion*':
+    - match: glob
+    - xubuntu
+    - xubuntuasetukset

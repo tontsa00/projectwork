@@ -114,3 +114,15 @@ Asensin sen sijaan Calibre pdf luku ohjelman Xubuntu minionille.
 LibreOffice toimisto ohjelmat asentuivat Xubuntu minionille, mutta ei Windows minionille.
 Asensin LibreOffice ohjelman manuaalisesti lataamalla ohjelman Windows minionillani osoitteesta: https://fi.libreoffice.org/.
 
+Ohjelmien asentamisen jälkeen, määritin asetukset valmiiksi vain Firefox www-selaimelle, koska muihin ohjelmiin annan käyttäjien itse
+valita mieleisensä asetukset.
+
+Aloitin etsimällä ensin Windows minionillani käyttäjä asetukset, jotka löytyivät kansiosta 
+C:\Users\tonts\AppData\Roaming\Mozilla\Firefox\Profiles\isc998ku.default-1551160940498 pref.js tiedostosta.
+
+Xubuntu minionillani asetus tiedosto löytyi kansiosta ~/.mozilla/firefox/b6w20qxd.default prefs.js tiedostosta myöskin.
+
+Kopion Windows 10 minionillani pref.js asetus tiedoston DigitalOcean salt-master palvelimelleni.
+
+Sekä tein saman myöx Xubuntu minionillani, eli kopioin pref.js asetus tiedoston DigitalOCean palvelimelleni.
+
