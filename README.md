@@ -10,3 +10,13 @@ tietokoneelle useita virtuaalisia orjia. Tavoitteena olisi, että moduulillani,
 kuka tahansa voi asentaa useille työasema tietokoneille oletus ohjelmat, 
 ohjelmien asetukset olisi ennalta määritetty sekä kaikki työasemat 
 olisivat valmiina käytössä.
+
+Olen jo etukäteen tehnyt valmistelu projektilleni.
+
+Määritin käyttöön GitHub repository varaston windows repository varaston käyttöön Saltstack ohjeiden mukaan:
+https://docs.saltstack.com/en/latest/topics/windows/windows-package-manager.html.
+
+Projektissani käytin Windows 10 läppäriä, mille loin uudet käyttäjät saltilla, asensin ohjelmat sekä määritin ohjelmien
+asetukset saltilla valmiiksi.
+
+Tämän lisäksi käytin Xubuntua jolle tein samat määritykset kuin Windows 10 läppärilleni.
