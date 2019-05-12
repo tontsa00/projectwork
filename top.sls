@@ -1,5 +1,5 @@
 base:
   'windows 10 minion':
-    - windows
+    - windows:
   'xubuntu minion':
     - xubuntu
