@@ -1,3 +1,5 @@
 base:
   'windows 10 minion':
-    - users
+    - windows users
+  'xubuntu minion':
+    - xubuntu users
