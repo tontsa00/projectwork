@@ -98,10 +98,15 @@ Jatoin projektia asentamalla ohjelmia saltilla.
 Asensin seuraavat ohjelmat molemmille minioneille:
 
 Firefox www-selain
+
 Thunderbird sähköpostiohjelma
+
 Gimp kuvankäsittelyohjelma
+
 VLC multimedia soitin ohjelma
+
 7zip pakkaushallintaohjelma
+
 Git Github repository ohjelman
 
 Adobe Reader ohjelman asennus ei onnistunut Xubuntu minionille, mutta windows 10 minionille asennus onnistui.
