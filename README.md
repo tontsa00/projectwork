@@ -18,6 +18,13 @@ https://docs.saltstack.com/en/latest/topics/windows/windows-package-manager.html
 
 Minionit projektissani ovat windows 10 minion, Windows 10 läppärilläni sekä xubuntu minion, xubuntu tietokoneellani.
 
+Windows 10 minionin latasin osoitteesta: https://repo.saltstack.com/windows/Salt-Minion-2017.7.4-Py3-AMD64-Setup.exe
+ja asensin ohjelman Windows 10 läppärilläni.
+
+Xubuntun minionin asensin xubuntun terminaalissa komennoilla 
+sudo apt-get update sekä sudo apt-get install -y salt-minion.
+Tämän lisäksi käynnistin salt-minion palvelun uudestaan, sudo systemctl restart salt-minion komennolla.
+
 Projektissani käytin Windows 10 läppäriä, mille loin uudet käyttäjät saltilla, asensin ohjelmat sekä määritin ohjelmien
 asetukset saltilla valmiiksi.
 
