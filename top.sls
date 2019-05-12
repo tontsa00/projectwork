@@ -1,5 +1,9 @@
 base:
   'windows 10 minion':
-    - windows:
+     - projectwork
+         - windows
+         - ohjelmat
   'xubuntu minion':
-    - xubuntu
+     - projectwork
+         - xubuntu
+         - ohjelmat
