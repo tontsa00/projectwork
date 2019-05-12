@@ -1,7 +1,1 @@
-CreateUser:
-   user.present:
-     - name: minion
-     - fullname: Minion orja
-     - password: 'salainen'
-     - groups:
-       - Local
+salt 'windows 10 minion' add name windows minion password salainen fullname Windows minion groups local
