@@ -191,7 +191,8 @@ Kaiken tämän jälkeen Windows tietokoneella avasin tiedostojenhallinta ikkunan
 
 \\tontsa00.me\sambashare
 
-Jolloin pääsin Windows tietokoneellani samban jaettuun kansioon.
+Kuitenkin Samba ei jostain syystä ei suostunut toimimaan, vaikka ennen toimikin normaalisti, voi olla 
+että minulla olikin jotain internet yhteys ongelmia sambassa.
 
 
 Luomani state tila tiedoston mahdollistavat uusien käyttäjien luomisen minion tietokoneille, uusien 
