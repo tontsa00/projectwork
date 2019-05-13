@@ -194,6 +194,18 @@ Kaiken tämän jälkeen Windows tietokoneella avasin tiedostojenhallinta ikkunan
 Kuitenkin Samba ei jostain syystä ei suostunut toimimaan, vaikka ennen toimikin normaalisti, voi olla 
 että minulla olikin jotain internet yhteys ongelmia sambassa.
 
+Samban sijaan kokeilin Filezilla FTP tiedostojen jako ohjelmaa. Asensin Filezilla palvelimen minun DigitalOcean
+palvelimelleni komennoilla sudo apt-get update sekä sudo apt-get install filezilla.
+Tämän jälkeen noudatin ohjeita DigitalOcean sivulta: 
+https://www.digitalocean.com/community/tutorials/how-to-use-filezilla-to-transfer-and-manage-files-securely-on-your-vps.
+Ohjeissa pyydettiin lisäämään yksityinen SSH avainpari tiedosto Filezillaan. Minulla tätä ei ollut, joten loin Putty ohjelmalla
+uuden RSA avaimen Putty Key Generator ohjelmalla. Käytin apuna ohjeita Joyent sivulta: 
+https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows.
+Avaimen luotuani lisäsin avaimen Filezilla ohjelmassa asetuksissa. Tämän tehtyä avasin Sivustonhallinta ikkunan ja loin 
+uuden salt nimisen jaetun sivun. Host kohtaan kirjoitin palvelimeni ip osoitteen ja portiksi valitsin 22 sekä protokollaksi
+SFTP - SSH File Transfer protokollan. Kirjautumistyypiksi valitsin interaktiivinen sekä käyttäjänimeksi palvelimeni käyttäjänimen toni.
+Painoin yhdistä, kirjoitin ssh avainpariin määrittämäni salasanan ja yhteys oli luotu Filezilla ohjelmalla minun DigitalOcean palvelimelleni.
+
 
 Luomani state tila tiedoston mahdollistavat uusien käyttäjien luomisen minion tietokoneille, uusien 
 ohjelmien asennus minioneille sekä asetustiedostojen korvaaminen uusilla muutoksilla. Ja myöskin yhteisen
