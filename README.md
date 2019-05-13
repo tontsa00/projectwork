@@ -191,10 +191,26 @@ Kaiken tämän jälkeen Windows tietokoneella avasin tiedostojenhallinta ikkunan
 
 \\tontsa00.me\sambashare
 
-Kuitenkin Samba ei jostain syystä ei suostunut toimimaan, vaikka ennen toimikin normaalisti, voi olla 
-että minulla olikin jotain internet yhteys ongelmia sambassa.
+Aluksi minulla oli vaikeuksia saada Samba toimimaan, mutta löysin apua tästä osoitteesta:
+https://community.spiceworks.com/topic/2148301-samba-4-and-windows-10-file-sharing.
 
-Samban sijaan kokeilin Filezilla FTP tiedostojen jako ohjelmaa. Asensin Filezilla palvelimen minun DigitalOcean
+Asensin samban komennoilla sudo apt-get update ja sudo apt-get install samba.
+Kun samba oli asentunut avasin nano editorilla samban konfiguraatio tiedoston, sudo nano /etc/samba/smb.conf.
+Asetus tiedostossa lisäsin [global] kohtaan, ntlm auth = yes. Tämän lisäksi lisäsin tiedoston loppuun:
+
+[sambashare]
+    comment = Samba on Ubuntu
+    path = /home/toni/sambashare
+    read only = no
+    browsable= yes
+    ntlm auth = yes
+
+Sekä kohdassa, write list = root, @lpadmin, @toni, @tonts, @tontsa00, lisäsin käyttäjänimet @toni, @tonts sekä @tontsa00.
+Kaiken tämän jälkeen avasin Windows minion tietokoneellani Windows+E pikanäppäin komennolla Resurssien hallinnan
+ja kirjoitin osoite kenttään \\tontsaoo.me\sambashare tai \\104.248.143.181\sambashare jolloin sain auki sambashare kansion sisällön ja näin kaksi tekemääni tiedostoa kansiossa.
+
+
+Samban lisäksi kokeilin Filezilla FTP tiedostojen jako ohjelmaa. Asensin Filezilla palvelimen minun DigitalOcean
 palvelimelleni komennoilla sudo apt-get update sekä sudo apt-get install filezilla.
 Tämän jälkeen noudatin ohjeita DigitalOcean sivulta: 
 https://www.digitalocean.com/community/tutorials/how-to-use-filezilla-to-transfer-and-manage-files-securely-on-your-vps.
