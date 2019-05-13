@@ -204,11 +204,18 @@ Asetus tiedostossa lisäsin [global] kohtaan, ntlm auth = yes. Tämän lisäksi 
     read only = no
     browsable= yes
     ntlm auth = yes
+    public = yes
 
 Sekä kohdassa, write list = root, @lpadmin, @toni, @tonts, @tontsa00, lisäsin käyttäjänimet @toni, @tonts sekä @tontsa00.
 Kaiken tämän jälkeen avasin Windows minion tietokoneellani Windows+E pikanäppäin komennolla Resurssien hallinnan
 ja kirjoitin osoite kenttään \\tontsaoo.me\sambashare tai \\104.248.143.181\sambashare jolloin sain auki sambashare kansion sisällön ja näin kaksi tekemääni tiedostoa kansiossa.
 
+Xubuntu minionilla en saanut heti Sambaa toimimaan, koska minun piti asentaa samba palvelu sekä Nautilus ohjelmat.
+Asensin ohjelmat komennoilla sudo apt-get update, sudo apt-get install samba sekä sudo apt-get install nautilus.
+Ohjelmien asennettua avasin Nautilus ohjelman, klikkasin hiirellä Other Locations ja kohdassa Connect to Server kirjoitin:
+smb://tontsa00.me/sambashare/, määritin nimekseni Anonymous ja Nautilis avasi jaetun Samba kansion, missä olin aikaisemmin luonut testi.txt tiedoston.
+
+Olisin tämän lisäksi vielä halunnut kokeilla määrittää salt tila state komennoilla samban jaetun kansion minioneille suoraan käyttöön, mutta valitettavasti taitoni ei tähän riittäneet.
 
 Samban lisäksi kokeilin Filezilla FTP tiedostojen jako ohjelmaa. Asensin Filezilla palvelimen minun DigitalOcean
 palvelimelleni komennoilla sudo apt-get update sekä sudo apt-get install filezilla.
