@@ -1,3 +1,3 @@
-~/.mozilla/firefox/b6w20qxd.default/prefs.js
+~/.mozilla/firefox/qslm9v2b.default/prefs.js
   file.managed:
-    - source: salt//projectwork/xubuntuasetukset/prefs.js
+    - source: salt//xubuntuasetukset/prefs.js

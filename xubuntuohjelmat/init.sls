@@ -37,3 +37,8 @@ install_calibre:
  pkg.installed:
    - pkgs:
      - calibre
+
+install_nautilus:
+ pkg.installed:
+   - pkgs:
+     - nautilus
