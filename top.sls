@@ -1,10 +1,12 @@
 base:
   '*windows 10 minion*':
     - match: glob
-    - windows
+    - windowsohjelmat
     - windowsasetukset
 
   '*xubuntu minion*':
     - match: glob
-    - xubuntu
+    - xubuntuohjelmat
     - xubuntuasetukset
+
+
